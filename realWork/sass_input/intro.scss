@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka&family=Roboto+Slab:wght@100;300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+$heigh1:600px;
+$height2:700px;
+$height3:900px;
+$fontsz1:15px;
+$fontsz2:30px;
+$fontsz3:50px;
+
+$stylef: 'Fredoka', sans-serif;
+$stylef2: 'Roboto Slab', serif;
+$font_inner_text: 'Quicksand', sans-serif;
+
+$bgr_theme_color: rgb(245, 238, 238);
+
+@mixin hver-cursor {
+    &:hover{
+        cursor: pointer;
+    }
+}
+@mixin backgr-style {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+@mixin display-flex-col{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+@mixin  display-flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center
+};
+
+body{
+    margin: 0;
+    padding: 0;
+    min-width: 570px;
+}
+.navbar{
+    @include display-flex-row;
+    position: fixed;
+    z-index: 2;
+    background-color: gainsboro;
+    height: 70px;
+    width: 100%;
+    img{
+        margin-left:40px;
+        @include hver-cursor;
+    };
+    p{
+        font-family: $stylef;
+    }
+    ul{
+        position: relative;
+        
+        width: fit-content;
+        li{
+            display: inline;
+            font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight:400;
+            &:hover{
+                border-bottom: 4px solid olivedrab;
+                cursor: pointer;
+                
+            }
+        }
+        :nth-child(2), :nth-child(3){
+            margin-left: 35px;
+        }
+    }
+};
+.intro{
+    @include display-flex-col;
+    @include backgr-style;
+    height: $heigh1;
+    background-image: url(https://images.unsplash.com/photo-1522865080725-2a9ea1fcb94e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXwxNTYwNjEwfHxlbnwwfHx8fA%3D%3D&w=1000&q=80);
+    div{
+        text-align: center;
+        margin: auto;
+        width: fit-content;
+       
+    }
+    div p{
+        color: white;
+        font-size: $fontsz3;
+        font-family: $stylef2;
+        border-bottom: 3px solid whitesmoke
+    }
+}
+.tech{
+    margin-top: 60px;
+    width: 100%;
+    height: fit-content;
+    text-align: center;
+    p{
+        display: inline;
+        font-family: $stylef;
+        font-size: 30px;
+        font-weight: bolder;
+    }
+    svg{
+        border-radius: 10px;
+        margin-left: 15px;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    svg,p{
+        vertical-align: middle
+    }
+}
+.photoExample{
+    @include display-flex-row;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    align-items: center;
+    box-sizing: border-box;
+    padding-left: 60px;
+    padding-right: 60px;
+    width: 92%;
+    height: $heigh1 - 100;
+    margin-top: 60px;
+    margin-left:4%;
+    border-radius: 12px ;
+    background-color: $bgr_theme_color;
+     video{
+        width: 400px;
+        height: 300px;
+        border-radius: 25px;
+        object-fit: cover;
+      
+     } 
+     div{
+         margin-left: 50px;
+         p:nth-child(1){
+             font-size: 40px;
+             font-family: $stylef;
+             font-weight:bold;
+         }
+         p:nth-child(2){
+             font-size: 16px;
+             line-height: 1.6;
+             font-family: $font_inner_text;
+         }
+         
+     }
+    
+}
+.showcase{
+    @include display-flex-col;
+    margin-top: 50px;
+    width: 100%;
+    height:650px;
+    div{
+        width: 80%;
+        font-family: $stylef;
+        font-weight: bolder;
+        font-size: 35px;
+        place-self: center;
+        text-align: center;
+   
+    }
+    #transition_img_show{
+        @include display-flex-row;
+        justify-content: center ;
+        width: 80%;
+        height: fit-content;
+        padding: 70px;
+        box-sizing: border-box;
+        #dots{
+            width: fit-content;
+            div{
+                background-color: rgb(219, 202, 202);
+                height: 20px;
+                width: 20px;
+                margin-top: 10px;
+                border-radius: 50%;
+                border: 0.2px solid gray;
+            }
+
+        }
+        #img_displ{
+            height: 400px;
+            width: 80%;
+            margin-left: 30px;
+            background-image: url();
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 9px;
+            transition: 1s;
+        }
+    }
+    
+}
+.features{
+    @include display-flex-row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 30px;
+    width: 100%;
+    height: fit-content;
+    background-color: $bgr_theme_color;
+    padding: 4%;
+    box-sizing: border-box;
+    div{
+        width: 46%;
+        height: 320px;
+        background-color: whitesmoke;
+        border-radius: 30px;
+        margin-top: 40px;
+        padding: 30px;
+        padding-left: 40px;
+        padding-right: 40px;
+        box-sizing: border-box;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+    i{
+        font-size: 35px;
+    }
+    .main_text{
+        font-family: $stylef;
+        font-size: 35px;
+        font-weight: 500;
+    }
+    .desc_text{
+        font-family: $stylef2;
+        font-size: 16px;
+        line-height: 1.6;
+    }
+}
+
+
+
+@media (max-width:1026px){
+    .photoExample{
+        padding: 30px;
+        height: fit-content;
+        flex-direction: column;
+    }
+    .photoExample video{
+        width: 100%;
+        height: fit-content;
+    }
+    .features div{
+        width: 100%;
+    }
+    .showcase #transition_img_show{
+        width: 100%;
+    }
+}
+
+@media (max-width:905px){
+    .showcase div{
+        width: 100%;
+    }
+    .showcase #transition_img_show {
+        width: 100%;
+        flex-direction: column;
+        overflow: hidden;
+        #img_displ{
+            margin-left: 0;
+            width: 100%;
+        }
+        #dots{
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 15px;
+            div{
+                margin-left: 5px;
+            }
+        }
+    }
+    .showcase div{
+        width: 65%;
+    }
+
+}
+@media (max-width:704px){
+    .photoExample div{
+        text-align: center;
+        margin-left: 0;
+    }
+    .showcase div{
+        width: 60%;
+    }
+}
+

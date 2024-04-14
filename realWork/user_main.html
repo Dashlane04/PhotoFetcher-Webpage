@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel = "stylesheet" href = "styling/user_main.css">
+</head>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bricklayer/0.4.2/bricklayer.min.css">
+    <link rel ="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+   
+   
+<body>
+
+      <div class="offcanvas offcanvas-start bg-green-400" style="background-color:#1a3338 ;" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+         <img src = "assets/photo-camera.png" width="40px" height="40px">
+          
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          
+          <div class = "offcanvas-options">
+              <a href = "intro.html">Introduction<i class="bi bi-book" style="color: white;"></i></a> 
+
+          </div>
+          <div class = "offcanvas-options">
+            <a href = "">Profile</a>
+          </div>
+          <div class = "offcanvas-options">
+            <a href = "auth.html">Account</a>
+          </div>
+        </div>
+        <div style="position:sticky ; padding-left: 5px;margin-bottom: 10px;color: white; margin-left: 15px;">
+            Created by Duc <br>
+            PhotoFetcher 2022 & All rights reserved
+        </div>
+      </div>
+    
+
+    <div id = "toTop"></div>
+    <div class = "backdrop"></div>
+    <div class = "popUp">
+        <img src = "assets/x-svgrepo-com.svg" height="30px" width="30px" id = "close">
+        <div class="dropdown">
+            <button class="btn btn-success dropdown-toggle text-nowrap btn-lg" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              Download
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="background-color:rgb(58, 55, 55) ;color:white">
+              <li style="margin-left:15px;">Choose a size:</li>
+              <li><a class="dropdown-item download-option" href="#">Original</a></li>
+              <li><a class="dropdown-item download-option" href="#">Large2X</a></li>
+              <li><a class="dropdown-item download-option" href="#">Medium</a></li>
+              <li><a class="dropdown-item download-option" href="#">Landscape</a></li>
+              <li><a class="dropdown-item download-option" href="#">Portrait</a></li>
+            </ul>
+        </div>
+        <img id = "showcaseImage">
+          
+    </div>
+    <div class = "navigation" id = "test"> 
+        <div class = "search_section">
+            <div class = "user_bar">
+                <img src = "assets/photo-camera.png" width="40px" height="40px">
+                <p>PhotoFetcher</p>
+                <i class="bi bi-list btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample" id = "off-canvas-open">
+                </i>
+            </div>
+            <p id = "message">The best free stock photos, royalty free images & videos shared <br> by creators.</p>
+            <div class = "search">
+                
+                <input type = "text" placeholder="Search for free photos and videos..." id = "queries">
+                <div>
+                    <i class="bi bi-search"></i>
+                </div>  
+            </div>  
+        </div>
+    </div>
+    <div class="loading-dots" id = "loader">
+        <div class="loading-dots--dot"></div>
+        <div class="loading-dots--dot"></div>
+        <div class="loading-dots--dot"></div>
+    </div>
+    <div id = "stats"></div>
+    <div class = "settings">
+    </div>
+    <div class = "results" >
+        
+    </div>
+    <script type = "module" src = "firebase_user_script/user_data.js"></script>
+    <script type = "module" src = "pexels_api_config/pexels.js"> </script>
+    <script src = "	https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+    <script>
+       var res = document.querySelector(".results");
+       var masonry ;
+       const  detectChanges = (mutations, observer) => {
+          console.log("Changed!", res.children);
+           masonry = new Masonry(res, {
+              itemSelector: ".container",
+              fitWidth: true,
+              resize: true,
+              gutter:20,
+        })
+       }
+       const observer = new MutationObserver(detectChanges);
+       observer.observe(res, {childList:true});
+    </script>
+    
+
+    
+</body>
+</html>

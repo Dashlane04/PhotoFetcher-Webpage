@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel = "stylesheet" href = "styling/intro.css">
+</head>
+<body>
+    <div class = "navbar">
+        <img src = "assets/photo-camera.png" width="60px" height="60px">
+        
+        <ul>
+            <li onclick="window.location.href = 'auth.html'">Login</li>
+            <li>Register</li>
+            <li onclick="window.location.href = 'user_main.html'">Discover</li>
+        </ul>
+    </div>
+    <div class = "intro">
+        <div>
+            <p>
+                PhotoFetcher.com
+            </p>
+            
+        </div>
+    </div>
+    <div class = "tech">
+        <p>Powered by Pexel API</p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="80px" height="80px" viewBox="0 0 32 32">
+            <path d="M2 0h28a2 2 0 0 1 2 2v28a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2z" fill="#05A081"></path>
+            <path d="M13 21h3.863v-3.752h1.167a3.124 3.124 0 1 0 0-6.248H13v10zm5.863 2H11V9h7.03a5.124 5.124 0 0 1 .833 10.18V23z" fill="#fff"></path>
+        </svg>
+    </div>
+    <div class = "photoExample"> 
+        <video autoplay muted  loop src="assets/canvas.mp4"></video>
+        <div>
+            <p>Seemless experience</p>
+            <p>Built with developers and users in mind, our photosearcher is reliable, easy to integrate and gives your users unlimited creative options without disrupting their workflow.</p>
+        </div>
+    </div>
+    <div class = "showcase">
+        <div>
+            A diverse library featured with high-quality stock images
+        </div>
+        <div id = "transition_img_show">
+            <div id = "dots">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div id = "img_displ"></div>
+        </div>
+    </div>
+    <div class = "features">
+        <div>
+            <i class="bi bi-stack"></i>
+            <p class = "main_text">
+                Hand-Selected, Updated Daily
+            </p>
+            <p class = "desc_text">
+                All content is selected and tagged by our curation team to ensure quality, freshness and searchability.
+            </p>
+        </div>
+        <div>
+            <i class="bi bi-check2-square"></i>
+            <p class = "main_text">
+                Supportive foundation
+            </p>
+            <p class = "desc_text">
+                Our visually diverse library is searchable in 28 languages and contributed by photographers across 170 countries.
+           </p>
+
+        </div>
+        <div>
+            <i class="bi bi-activity"></i>
+            <p class = "main_text">
+                Diverse & Inclusive
+            </p>
+            <p class = "desc_text">
+                Words and images matter. Whether searching for love or leadership, our algorithm is consciously designed to produce results that reflect and celebrate the diversity of our world.
+            </p>
+        </div>
+        <div>
+            <i class="bi bi-binoculars"></i>
+            <p class = "main_text">
+                Unmatched Search
+            </p>
+            <p class = "desc_text">
+                Our algorithm has been vetted by 100M+ users and learns with each new search. More than 15B requests are processed by our servers each month with an uptime of over 99.99%.
+            </p>
+        </div>
+    </div>
+    
+    <script src = "js_script/intro.js"></script>
+</body>
+</html>

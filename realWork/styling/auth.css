@@ -1,0 +1,327 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka&family=Roboto+Slab:wght@100;300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@100&family=Quicksand:wght@300&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1800px;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  align-content: center;
+}
+
+.dim {
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  z-index: 999;
+  background-color: #2C3E50;
+  position: absolute;
+  display: none;
+}
+
+.modal {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 10%;
+  font-size: 30px;
+  color: olivedrab;
+  left: 32.5%;
+  padding: 50px 50px;
+  border-radius: 8px;
+  border: 1px solid gray;
+  background-color: white;
+  z-index: 9999;
+  width: 35%;
+  height: fit-content;
+  font-weight: bold;
+  display: none;
+  animation: slide-in 1.2s ease-in-out forwards;
+}
+.modal #usrname_submit {
+  fill: whitesmoke;
+  width: 80px;
+  height: 50px;
+  border-radius: 9px;
+  background-color: #1ABC9C;
+  margin-top: 70px;
+  place-self: end end;
+}
+.modal #usrname_submit:active {
+  fill: #cdcdcd;
+  background-color: #23a48a;
+}
+.modal #usrname_submit:hover {
+  cursor: pointer;
+  box-shadow: 0px -5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+.modal svg {
+  width: 50px;
+  height: 50px;
+  fill: #1ABC9C;
+  place-self: center;
+}
+.modal h2 {
+  color: #343434;
+  margin-top: 30px;
+  font-size: 35px;
+  text-align: center;
+}
+.modal input {
+  appearance: none;
+  outline: none;
+  margin-top: 20px;
+  -webkit-appearance: none;
+  border: 0;
+  border-bottom: 2px solid olivedrab;
+  width: 100%;
+  font-size: 22px;
+  font-family: "Roboto Slab", serif;
+}
+@keyframes slide-in {
+  0% {
+    transform: translateY(-1000px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.container {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 800ms ease;
+  transform-style: preserve-3d;
+}
+.container.active {
+  transform: rotateY(180deg);
+}
+
+.app {
+  width: 550px;
+  height: 500px;
+  background: #34495E;
+  color: #fff;
+  font-family: montserrat;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 80px 1fr;
+  overflow: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  box-shadow: -2px 5px 15px rgba(0, 0, 0, 0.35);
+  border-radius: 12px;
+}
+.app.front {
+  transform: rotateY(0deg) translateZ(0em);
+}
+.app.back {
+  transform: rotateY(180deg) translateZ(0.5px);
+}
+
+.btn {
+  height: 50px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background: #1ABC9C;
+  letter-spacing: 1px;
+  font-size: 18px;
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 150px 1fr;
+  background: #2C3E50;
+  padding: 0 20px;
+}
+.header .info {
+  height: 100%;
+  font-weight: 800;
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 2px;
+  font-family: "Fredoka", sans-serif;
+}
+.header .prompt {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  margin-right: 20px;
+}
+.header .prompt .btn {
+  padding: 0 20px;
+  margin-left: 20px;
+  color: #fff;
+}
+
+.main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  height: fit-content;
+}
+.main .user_field {
+  width: 94%;
+  height: 100%;
+  background: rgba(44, 62, 80, 0.6);
+  padding: 10px 30px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.main .user_field .direct.login {
+  padding: 10px 0;
+  display: flex;
+}
+.main .user_field .direct.login .icon {
+  position: relative;
+  width: 2.2rem;
+  height: 2.2rem;
+  margin-right: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background: #fff;
+  overflow: hidden;
+}
+.main .user_field .direct.login .icon:before {
+  content: "";
+  position: absolute;
+  left: -3px;
+  top: -3px;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  transition: all 400ms ease;
+  transform: scale(0.4);
+  background: #1ABC9C;
+  z-index: 1;
+  opacity: 0;
+}
+.main .user_field .direct.login .icon i {
+  z-index: 2;
+  transition: all 300ms ease;
+  color: #000;
+  font-size: 1rem;
+}
+.main .user_field .direct.login .icon:hover:before {
+  transform: scale(1);
+  opacity: 1;
+}
+.main .user_field .direct.login .icon:hover i {
+  color: #fff;
+}
+.main .user_field ._details {
+  width: 100%;
+  height: 100%;
+}
+.main .user_field ._details .textbox {
+  position: relative;
+  margin: 10px 0 20px 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+.main .user_field ._details .textbox input {
+  position: relative;
+  height: 40px;
+  width: 70%;
+  border: none;
+  background: none;
+  font-size: 18px;
+  color: #fff;
+  padding: 0 10px;
+  letter-spacing: 1px;
+  outline: none;
+}
+.main .user_field ._details .textbox input:focus {
+  border-bottom: 1px solid whitesmoke;
+}
+.main .btn.login {
+  position: relative;
+  color: #fff;
+  align-self: flex-end;
+  margin: 40px 20px 0 0;
+  padding: 10px 0;
+  width: 160px;
+  font-family: "Roboto Slab", serif;
+}
+.main .btn.login:focus {
+  outline: none;
+  box-shadow: none;
+}
+.main .load_animation {
+  animation: scale 0.5s forwards, load infinite 0.5s;
+}
+@keyframes scale {
+  to {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 5px solid rgba(44, 62, 80, 0.6);
+    border-top: 5px solid whitesmoke;
+  }
+}
+@keyframes load {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.app.back .header {
+  grid-template-columns: 200px 1fr;
+}
+
+.app.back .main .user_field ._details .textbox {
+  height: 40px;
+}
+
+.app.back .main .user_field ._details .textbox input:focus + .input_detail {
+  top: 0%;
+}
+
+._footer {
+  color: gray;
+  height: fit-content;
+  font-family: "Roboto Slab", serif;
+  background-color: white;
+  line-height: 60px;
+}
+
+.border_bottom {
+  border-bottom: 1px solid #a42b2b;
+}
+
+/*# sourceMappingURL=auth.css.map */
